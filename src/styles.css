@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.toast-success {
+    background-color: #279bdd !important;
+    /* Verde */
+}
+
+/* Cambia el color de fondo para el mensaje de advertencia */
+.toast-warning {
+    background-color: #e05745 !important;
+    /* Naranja */
+}
