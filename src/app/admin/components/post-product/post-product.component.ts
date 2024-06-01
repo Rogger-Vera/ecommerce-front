@@ -39,9 +39,6 @@ export class PostProductComponent implements OnInit  {
   onFileSelected(event: any){
     this.selectedFiles = Array.from(event.target.files);
     this.previewImage();
-    // this.selectedFiles.forEach((file, index) => {
-    //   console.log(`File ${index + 1}:`, file);
-    // });
   }
   
   previewImage(){
@@ -49,9 +46,6 @@ export class PostProductComponent implements OnInit  {
       const reader = new FileReader();
       reader.onload = (e: any) => {
         this.imagePreviews = [e.target.result];
-        console.log('evento:', e);
-        // console.log('e.target.result:', e.target.result);
-        console.log('e.target.result:', [e.target.result]);
       };
       reader.readAsDataURL(this.selectedFiles[0]);
     }
@@ -78,8 +72,6 @@ export class PostProductComponent implements OnInit  {
 
       this.adminService.addProduct(formData).subscribe( 
         (res) => {
-          console.log('res: ',res);
-          console.log('res.id: ',res.id);
           if (res.id != null) {
             setTimeout( () => {
               this.toastr.success(`El producto ${this.productForm.value.name} se agrego correctamente`, 'Producto agregado');
@@ -103,11 +95,6 @@ export class PostProductComponent implements OnInit  {
 
     }
     else{
-      // for(const i in this.productForm.controls){
-      //   console.log(this.productForm.controls)
-      //   this.productForm.controls[i].markAsDirty();
-      //   this.productForm.controls[i].updateValueAndValidity();
-      // }
       this.productForm.markAllAsTouched();
     }
   }
