@@ -39,9 +39,9 @@ export class LoginComponent implements OnInit {
       this.authService.login(email, password).subscribe(
         (res) => {
           setTimeout(() => {
-            if (UserStorageService.isAdminLoggedIn) {
+            if (UserStorageService.isAdminLoggedIn()) {
               this.router.navigateByUrl("admin/dashboard");
-            }else if (UserStorageService.isCustomerLoggedIn) {
+            }else if (UserStorageService.isCustomerLoggedIn()) {
               this.router.navigateByUrl("customer/dashboard");
             }
             this.toastr.success('Usuario ingresado con exito', 'Credenciales correctas');

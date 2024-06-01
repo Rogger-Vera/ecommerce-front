@@ -50,7 +50,6 @@ export class DashboardComponent implements AfterViewInit {
           product.processedImages = product.images.map(image => 'data:image/jpeg;base64, ' + image);
         });
         this.products = res;
-        console.log('products: ', this.products)
       },
       err => {
         console.error('Error fetching products', err);
@@ -67,7 +66,6 @@ export class DashboardComponent implements AfterViewInit {
           product.processedImages = product.images.map(image => 'data:image/jpeg;base64, ' + image);
         });
         this.products = res;
-        console.log('products: ', this.products)
       },
       err => {
         console.error('Error fetching products', err);
